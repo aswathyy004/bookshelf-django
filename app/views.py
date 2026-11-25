@@ -58,13 +58,8 @@ def edit_book(request, id):
 
 def delete_book(request, id):
     book = Book.objects.get(id=id)
-
-    if request.method == 'POST':
-        book.delete()
-        return redirect('book_list')
-
-    return render(request, 'app/delete_book.html', {'book': book})
-
+    book.delete()
+    return redirect('book_list')
 
 def about(request):
     return render(request, 'app/about.html')

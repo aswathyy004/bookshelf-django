@@ -1,0 +1,17 @@
+{% comment %} {% extends 'app/base.html' %}
+
+{% block title %}Delete Book | Bookshelf{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <h1>Delete Book</h1>
+
+    <p>{{ book.title }} has been deleted.</p>
+
+    <a href="{% url 'book_list' %}" class="btn">Back to Books</a>
+
+</div>
+
+{% endblock %} {% endcomment %}

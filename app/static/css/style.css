@@ -387,4 +387,28 @@ footer {
         width: 100%;
     }
 
+        body {
+        margin: 0;
+        width: 100%;
+    }
+
+    .container {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 600px;
+    }
+
+    .footer {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
+
