@@ -1,0 +1,51 @@
+{% extends 'app/base.html' %}
+
+{% block title %}{{ book.title }} | Bookshelf{% endblock %}
+
+{% block content %}
+
+<a href="{% url 'book_list' %}" class="back-link">
+    ← Back to all books
+</a>
+
+<div class="detail-container">
+
+    <div class="detail-cover">
+        📘
+    </div>
+
+    <div class="detail-info">
+
+        <h1>{{ book.title }}</h1>
+
+        <p>{{ book.description }}</p>
+
+        <p>
+            <strong>Author:</strong> {{ book.author }}
+        </p>
+
+        <p>
+            <strong>Category:</strong> {{ book.category }}
+        </p>
+
+        <p>
+            <strong>Year:</strong> {{ book.year }}
+        </p>
+
+        <p>
+            <strong>Book ID:</strong> {{ book.id }}
+        </p>
+
+        <a href="{% url 'edit_book' book.id %}" class="btn">
+            Edit Book
+        </a>
+
+        <a href="{% url 'delete_book' book.id %}" class="btn delete-btn">
+            Delete Book
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

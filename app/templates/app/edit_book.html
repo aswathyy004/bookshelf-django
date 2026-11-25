@@ -1,0 +1,34 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Edit Book | Bookshelf{% endblock %}
+
+{% block content %}
+
+<h1>Edit Book</h1>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <label>Title</label>
+    <input type="text" name="title" value="{{ book.title }}" required>
+
+    <label>Author</label>
+    <input type="text" name="author" value="{{ book.author }}" required>
+
+    <label>Category</label>
+    <input type="text" name="category" value="{{ book.category }}" required>
+
+    <label>Year</label>
+    <input type="number" name="year" value="{{ book.year }}" required>
+
+    <label>Description</label>
+    <textarea name="description" required>{{ book.description }}</textarea>
+
+    <button type="submit" class="btn">
+        Update Book
+    </button>
+
+</form>
+
+{% endblock %}

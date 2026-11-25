@@ -1,0 +1,61 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}Home | Bookshelf{% endblock %}
+
+{% block content %}
+
+<div class="hero">
+
+    <div class="hero-content">
+        <h1>Welcome to Bookshelf 📚</h1>
+
+        <p>
+            Welcome to your little corner of books.
+            Explore different genres, discover new stories,
+            and find your next great read.
+        </p>
+        <p>
+            From timeless classics to modern favourites,
+            explore a growing collection of books and let
+            every new page take you somewhere unexpected.
+        </p>
+
+        <a href="{% url 'book_list' %}" class="btn">
+            Browse all books →
+        </a>
+    </div>
+
+    <div class="hero-image">
+        <img src="{% static 'images/home.jpg' %}" alt="A cozy reading corner">
+    </div>
+
+</div>
+
+<div class="featured-section">
+    <h2>Featured Books</h2>
+
+    <div class="book-grid">
+
+    {% for book in featured %}
+
+    <div class="book-card">
+
+        <div class="book-cover">
+            📖
+        </div>
+
+        <h3>{{ book.title }}</h3>
+
+        <p>{{ book.author }}</p>
+
+        <a href="{% url 'book_detail' book.id %}">
+            View details
+        </a>
+
+    </div>
+    {%endfor%}
+</div>
+
+{% endblock %}
+
